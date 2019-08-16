@@ -21,6 +21,20 @@ import java.util.Date;
  * @date: 2019年8月7日 下午8:27:18  
  */
 public class DateUtil {
+	 //获取一个18-70 岁之间的随机日期
+	public static Date getRandomDate(int minAge,int maxAge) {
+	  Calendar c1 = Calendar.getInstance();
+	  c1.add(Calendar.YEAR, -minAge);//年龄最小的
+	 
+	  Calendar c2 = Calendar.getInstance();
+	  c2.add(Calendar.YEAR, -maxAge);//年龄最大的
+		
+    return getRandom(c2.getTime(), c1.getTime());
+	 
+		
+		
+	}
+	
 	/*
 	* 方法1：(5分)
 	* 给一个时间对象，返回该时间所在月的1日0时0分0秒。例如一个Date对象的值是2019-05-18 11:37:22
